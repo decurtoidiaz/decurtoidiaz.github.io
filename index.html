@@ -54,7 +54,37 @@ I hold a 5-year degree in Engineering of Telecommunication from Universitat Aut√
           </tr>
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-        
+
+         <tr onmouseout="stop_vc()" onmouseover="start_vc()" bgcolor="#ffffd0">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='sample_vc'><img src='c/after_vc.png'></div>
+                <img src='c/before_vc.png'>
+              </div>
+              <script type="text/javascript">
+                function start_vc() {
+                  document.getElementById('sample_vc').style.opacity = "1";
+                }
+
+                function stop_vc() {
+                  document.getElementById('sample_vc').style.opacity = "0";
+                }
+                stop_vc()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://arxiv.org/pdf/2011.15104">
+                <papertitle>Vulcan Centaur: towards end-to-end real-time perception in lunar rovers.</papertitle>
+              </a>
+              <br>
+              <strong>De Curt√≥</strong> and
+              Duvall.
+              <br>
+              <p></p>
+              <p>We introduce a new real-time pipeline for SLAM and VIO in the context of planetary rovers. We leverage prior information of the location of the lander to propose an object-level SLAM approach that optimizes pose and shape of the lander together with camera trajectories of the rover. As a further refinement step, we propose to use techniques of interpolation between adjacent temporal samples; videlicet synthesizing non-existing images to improve the overall accuracy of the system.</p>
+            </td>
+          </tr>
+                  
           <tr onmouseout="stop_ce4()" onmouseover="start_ce4()" bgcolor="#ffffd0">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
