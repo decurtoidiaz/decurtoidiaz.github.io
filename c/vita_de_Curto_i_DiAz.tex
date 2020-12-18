@@ -1,0 +1,464 @@
+%
+% De Curtò i DíAz.
+% decurtoidiaz@ieee.org
+
+\documentclass[10pt]{article}
+
+\usepackage{calc}
+
+\usepackage[catalan]{babel}
+
+% Layout: Puts the section titles on left side of page
+\reversemarginpar
+
+%% Use these lines for letter-sized paper
+\usepackage[paper=letterpaper,
+            %includefoot, % Uncomment to put page number above margin
+            marginparwidth=1.2in,     % Length of section titles
+            marginparsep=.05in,       % Space between titles and text
+            margin=1in,               % 1 inch margins
+            includemp]{geometry}
+
+%% More layout: Get rid of indenting throughout entire document
+\setlength{\parindent}{0in}
+
+%% This gives us fun enumeration environments. compactenum will be nice.
+\usepackage{paralist}
+
+%% Reference the last page in the page number
+%
+% NOTE: comment the +LP line and uncomment the -LP line to have page
+%       numbers without the ``of ##'' last page reference)
+%
+% NOTE: uncomment the \pagestyle{empty} line to get rid of all page
+%       numbers (make sure includefoot is commented out above)
+%
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+%\pagestyle{empty}      % Uncomment this to get rid of page numbers
+\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfootoffset{\marginparsep+\marginparwidth}
+\newlength{\footpageshift}
+\setlength{\footpageshift}
+          {0.5\textwidth+0.5\marginparsep+0.5\marginparwidth-2in}
+\lfoot{\hspace{\footpageshift}%
+       \parbox{4in}{\, \hfill %
+                    \arabic{page} of \protect\pageref*{LastPage} % +LP
+%                    \arabic{page}                               % -LP
+                    \hfill \,}}
+
+% Finally, give us PDF bookmarks
+\usepackage{color,hyperref}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.3}
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=darkblue,urlcolor=darkblue,
+            anchorcolor=darkblue,citecolor=darkblue}
+
+\usepackage{graphicx}
+\usepackage[applemac]{inputenc}
+%%%%%%%%%%%%%%%%%%%%%%%% End Document Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Helper Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The title (name) with a horizontal rule under it
+%
+% Usage: \makeheading{name}
+%
+% Place at top of document. It should be the first thing.
+\newcommand{\makeheading}[1]%
+        {\hspace*{-\marginparsep minus \marginparwidth}%
+         \begin{minipage}[t]{\textwidth+\marginparwidth+\marginparsep}%
+                {\large \bfseries #1}\\[-0.15\baselineskip]%
+                 \rule{\columnwidth}{1pt}%
+   
+  		 \begin{flushright}
+		\includegraphics[scale=0.17]{de_Curto_i_DiAz}
+		\end{flushright}
+         \end{minipage}}
+\renewcommand{\section}[2]%
+        {\pagebreak[2]\vspace{1.3\baselineskip}%
+         \phantomsection\addcontentsline{toc}{section}{#1}%
+         \hspace{0in}%
+         \marginpar{
+         \raggedright \scshape #1}#2}
+
+% An itemize-style list with lots of space between items
+\newenvironment{outerlist}[1][\enskip\textbullet]%
+        {\begin{enumerate}[#1]}{\end{enumerate}%
+         \vspace{-.6\baselineskip}}
+
+% An environment IDENTICAL to outerlist that has better pre-list spacing
+% when used as the first thing in a \section
+\newenvironment{lonelist}[1][\enskip\textbullet]%
+        {\vspace{-\baselineskip}\begin{list}{#1}{%
+        \setlength{\partopsep}{0pt}%
+        \setlength{\topsep}{0pt}}}
+        {\end{list}\vspace{-.6\baselineskip}}
+
+% An itemize-style list with little space between items
+\newenvironment{innerlist}[1][\enskip\textbullet]%
+        {\begin{compactenum}[#1]}{\end{compactenum}}
+
+% To add some paragraph space between lines.
+% This also tells LaTeX to preferably break a page on one of these gaps
+% if there is a needed pagebreak nearby.
+\newcommand{\blankline}{\quad\pagebreak[2]}
+
+%%%%%%%%%%%%%%%%%%%%%%%% End Helper Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%% Begin CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\makeheading{J. de Curtò i DíAz. \\ \small IEEE Member. ACM \& SIGGRAPH Member. SIAM Member. IEEE Computer Society. \\ 
+IEEE Robotics and Automation Society. IEEE Aerospace and Electronic Systems Society. \\ IEEE Information Theory Society. IEEE Signal Processing Society. IEEE Communications Society. \\
+SIAM Activity Group on Discrete Mathematics. SIAM Activity Group on Imaging Science.\\
+SIAM Activity Group on Computational Science and Engineering. \\ SIAM Activity Group on Data Mining and Analytics.\\
+\small{\href{mailto:decurtoidiaz@ieee.org}{decurtoidiaz@ieee.org}}
+\small{\href{mailto:decurtoidiaz@acm.org}{decurtoidiaz@acm.org}}
+\small{\href{mailto:decurtoidiaz@siggraph.org}{decurtoidiaz@siggraph.org}} \\
+\href{https://member.acm.org/~decurtoidiaz}{member.acm.org/$\sim$decurtoidiaz}}
+
+\section{General information}
+%
+% NOTE: Mind where the & separators and \\ breaks are in the following
+%       table.
+%
+% ALSO: \rcollength is the width of the right column of the table 
+%       (adjust it to your liking; default is 1.85in).
+%
+\newlength{\rcollength}\setlength{\rcollength}{1.85in}%
+%
+\begin{tabular}[t]{@{}p{\textwidth-\rcollength}p{\rcollength}}
+
+E-mail:
+\small{\href{mailto:c@decurto.tw}{c@decurto.tw}}\\
+Webpage:
+\href{https://www.decurto.tw}{www.decurto.tw}\\
+Phone: +1 (412) 407-6797.
+\\ \\
+Nationality: Catalunya (Regne d'Espanya). \\
+\end{tabular}
+
+\section{Career (selected)}
+
+\begin{outerlist}
+\item[\href{https://irisrover.space/}
+             {\textbf{Iris Lunar Rover}}. \href{https://www.cmu.edu}
+             {\textbf{Carnegie Mellon}}.]  
+             Pittsburgh. \\   
+             BRAIN Team. Co-Lead with R. A. Duvall. September 2020 - till now. \\
+             Founding member of a small research unit that works at the forefront of research in space exploration in the context of planetary rovers.           
+             
+\item[\href{https://irisrover.space/}
+             {\textbf{Iris Lunar Rover}}. \href{https://www.cmu.edu}
+             {\textbf{Carnegie Mellon}}.]  
+             Pittsburgh. \\
+             Teleoperations. Research Engineer. September 2020 - till now. \\
+             Integral part of the team that is developing a SLAM and VIO solution for the rover that will be deployed on the Moon in 2021.                
+             
+ \item[\href{https://www.urv.cat}
+             {\textbf{Universitat Rovira i Virgili}}.] Tarragona. \\
+             Research Scholar. September 2018 - September 2020.\\
+             Group of Intelligent Robotics and Computer Vision. 
+             
+ \item[\href{https://www.cuhk.edu.hk}{\textbf{The Chinese University of Hong Kong} (CUHK)}.] Hong Kong.\\
+	     Research Assistant. October 2017 - February 2018. \\
+             Department of Computer Science and Engineering.
+              
+ \item[\href{https://www.cmu.edu}
+             {\textbf{Carnegie Mellon}}.]  
+             Pittsburgh. \\
+             Research Assistant. June 2017 - July 2017. \\
+             School of Computer Science. Robotics.
+             
+ \item[\href{https://www.cityu.edu.hk}{\textbf{City University of Hong Kong}}.] Hong Kong. \\
+	     Senior Research Assistant. January 2017 - May 2017. \\
+              Department of Electrical Engineering.
+                            
+ \item[\href{https://www.ethz.ch/en.html}{\textbf{ETH Z\"urich} (ETHZ)}.] Z\"urich. \\
+             Graduate Research Assistant. April 2015 - September 2016.\\
+             Laboratory of Computer Vision. 
+             
+ \item[\href{https://www.cityu.edu.hk}{\textbf{City University of Hong Kong}}.] Hong Kong. \\
+	     Research Associate. July 2015 - August 2015. \\
+              Department of Computer Science.        
+                
+ \item[\href{https://www.cmu.edu}
+             {\textbf{Carnegie Mellon}}.] Pittsburgh. \\
+             Research Associate I. June 2014 - August 2014.\\
+             School of Computer Science. Robotics.
+\end{outerlist}
+
+\section{Education}
+ 
+ \href{https://www.ethz.ch/en.html}{\textbf{ETH Z\"urich} (ETHZ)}. Z\"urich.
+\begin{outerlist}
+\item[]  
+        \href{}
+             {Doctor of Science. April 2015 - March 2017}.\\
+             \href{https://www.vision.ee.ethz.ch/}{Laboratory of Computer Vision.}\\
+ \end{outerlist}
+ 
+ \href{https://www.cmu.edu}{\textbf{Carnegie Mellon}}. Pittsburgh.
+\begin{outerlist}
+
+\item[]  
+        \href{}
+             {Master of Science. May 2014 - February 2015.}\\
+             \href{https://www.cs.cmu.edu}{School of Computer Science}. \href{https://www.ml.cmu.edu}{ML Department} and \href{https://www.ri.cmu.edu}{Robotics}.
+              \item[] \textbf{Thesis:} A Library for Fast Kernel Expansions with Applications to Computer Vision and Deep Learning.
+              
+             \textbf{Academic Distinctions}: 
+             \begin{itemize}
+             \item HKPFS 2014-2015 \\ Highly prestigious HK Fellowship to pursue PhD studies at HKUST during academic years 2015-2018. Department of Computer Science and Engineering. Declined.
+             \item SINGA PhD Fellowship 2014. \\ Highly prestigious international award to pursue PhD studies at NTU Singapore during academic years 2015-2019. School of Electrical and Electronic Engineering. Declined.\\
+             \end{itemize}
+ \end{outerlist}
+ 
+ \href{https://www.cityu.edu.hk}{\textbf{City University of Hong Kong}}. Hong Kong.
+\begin{outerlist}
+
+\item[]  
+        \href{}
+             {Master of Science. September 2013 - February 2015.}\\
+             \href{https://www.ee.cityu.edu.hk}{Department of Electrical Engineering}. \\
+             \textbf{GPA: 4.12} (0-4 scale). \\
+             \textbf{Classification of Award: Distinction} (1/+100).
+             
+             \textbf{Academic Distinctions}: 
+             \begin{itemize}
+             \item Top Achiever 2015. \\ Award for being the first with regard to academic performance. 
+             \item MS Internship Sponsorship 2014. \\  Award for top performing students. Robotics. Carnegie Mellon. Pittsburgh.
+             \item MS Entrance Scholarship 2013/2014. \\ Award given to the three most excellent students. \\
+             \end{itemize}
+ \end{outerlist}
+ 
+  \newpage
+  \href{https://www.uab.cat/web/universitat-autonoma-de-barcelona-1345467954774.html}{\textbf{Universitat Autònoma de Barcelona}}. Cerdanyola del Vall\`es (Barcelona).
+\begin{outerlist}
+
+\item[]  
+       \href{}{5-year Degree in Engineering of Telecommunication, Second Cycle}. 2011 - 2013. \\
+       Specialization in Communications, Signal Processing and Microwave Engineering. \\
+       School of Engineering. 
+             
+ \item[] \textbf{Thesis:} Construction and Performance of Network Codes.\\
+ \textbf{Grade: Excellent.} First Class with Distinction.
+ \\
+ 
+ \end{outerlist}
+\href{https://www.upc.edu/?set_language=en}{\textbf{Universitat Politècnica de Catalunya} (UPC)}. 
+Barcelona.
+\begin{outerlist}
+
+\item[]  
+             \href{}{5-year Degree in Engineering of Telecommunication, First Cycle. 2006 - 2009.}\\
+ \end{outerlist}
+
+\href{}{\textbf{University Entrance Examination.}}\\
+ \textbf{Average Grade: 9.22/10.} First Class with Distinction. \\ \\
+              \textbf{Academic Distinctions}: 
+             \begin{itemize}
+             \item First year scholarship for university studies. Ministry of Education. \\ This award is given to the top nationwide first year university students.
+             \item First year scholarship for university studies. Caixa Manresa. \\ This award is given to the top university entrance examination average grades in the region of Catalunya.
+             \item University scholarship for an outstanding academic performance. Technological Baccalaureate. Government of Salou. This award is given to the top students in each graduation year by the local authority. \\
+            \end{itemize}
+
+ \href{}{\textbf{Technological Baccalaureate}. 2004 - 2006.} \\
+  \textbf{Average Grade: 9.7/10.} First Class Degree and Honorary Scholarship.\\
+        
+ \textbf{Academic Distinctions}:
+             \begin{itemize}
+             \item Outstanding Thesis of Research. Development and Design of a Virtual Shop in Visual Basic on the .NET Framework.
+             \item Outstanding Curriculum. 
+             \end{itemize}
+ 
+ \section{Publications}
+
+\begin{outerlist}
+
+\item[] \textbf{De Curt\`o i D\'iAz} and Duvall. \\
+Vulcan Centaur: towards end-to-end real-time perception in lunar rovers. \\
+\href{https://arxiv.org/pdf/2011.15104}{arxiv.org/pdf/2011.15104}
+
+\item[] \textbf{De Curt\`o i D\'iAz} and Duvall. \\
+Cycle-consistent Generative Adversarial Networks for Neural Style Transfer using data from Chang’E-4. \\
+\href{https://arxiv.org/pdf/2011.11627}{arxiv.org/pdf/2011.11627}
+
+\item[] \textbf{Curt\`o}, Zarza, Kitani, King and Lyu. \\
+Doctor of Crosswise: Reducing Over-parametrization in Neural Networks. \\
+\href{https://www.decurto.tw/c/doctor_of_crosswise.pdf}{decurto.tw/c/doctor\_of\_crosswise.pdf}
+%\href{https://www.arxiv.org/pdf/1905.10324}{arxiv.org/pdf/1905.10324}
+
+\item[] \textbf{Curt\`o}, Zarza, Torre, King and Lyu. \\
+High-resolution Deep Convolutional Generative Adversarial Networks. \\
+\href{https://www.decurto.tw/c/hdcgan.pdf}{decurto.tw/c/hdcgan.pdf}
+%\href{https://www.arxiv.org/pdf/1711.06491}{arxiv.org/pdf/1711.06491}
+
+\item[] \textbf{Curt\`o}, Zarza, Smola and Gool. \\ Segmentation of Objects by Hashing. \\
+\href{https://www.decurto.tw/c/c_and_z.pdf}{decurto.tw/c/c\_and\_z.pdf}
+%\href{https://www.arxiv.org/pdf/1702.08160}{arxiv.org/pdf/1702.08160}
+  
+\item[] \textbf{Curt\`o}, Zarza, Yang, Smola, Torre, Ngo and Gool. \\ McKernel: A Library for Approximate Kernel Expansions in Log-linear Time. \\
+\href{https://www.decurto.tw/c/mckernel.pdf}{decurto.tw/c/mckernel.pdf}
+%\href{https://www.arxiv.org/pdf/1702.08159}{arxiv.org/pdf/1702.08159}
+   
+\item[] \textbf{{De Curt\`o i D\'iAz}}, {De Zarza i Cubero} and V\'azquez. \\ Secure Network Coding: Overview and State-of-the-art.\\ Universitat Aut\`onoma de Barcelona. Cerdanyola del Vall\`es (Barcelona). 2012.\\
+      \href{https://blogs.uab.cat/curto/files/2019/05/nc_decurto12.pdf}{blogs.uab.cat/curto/files/2019/05/nc\_decurto12.pdf}
+         
+   \item[] \textbf{{De Curt\`o i D\'iAz}}, Moreno, Torrellas, Bofill and Muñoz. \\ Dear New Student: a Comparison between a Frontal and an Active Approach. \\ ALE 2007. Toulouse.
+  
+\end{outerlist}
+
+\section{Dissertations}
+   
+\begin{outerlist}   
+         \item[] Master of Science. \\  A Library for Fast Kernel Expansions with Applications to Computer Vision and Deep Learning.\\  Supervisors: Ngo and Smola. \\
+         Carnegie Mellon. Pittsburgh. 2014. \\ 
+       \href{https://www.curto.hk/c/decurto.pdf}{curto.hk/c/decurto.pdf} \\ \href{https://www.curto.hk/c/slides_decurto.pdf}{curto.hk/c/slides\_decurto.pdf}
+               \item[] 5-year Degree in Engineering of Telecommunication. \\  Construction and Performance of Network Codes.\\ Supervisor: V\'azquez. \\ Universitat Aut\`onoma de Barcelona. Cerdanyola del Vall\`es (Barcelona). 2013. \\        
+        \href{https://blogs.uab.cat/curto/files/2019/05/pfc_decurto.pdf}{blogs.uab.cat/curto/files/2019/05/pfc\_decurto.pdf} \\  \href{https://blogs.uab.cat/curto/files/2019/05/slides_pfc_decurto.pdf}{blogs.uab.cat/curto/files/2019/05/slides\_pfc\_decurto.pdf}
+\end{outerlist}
+
+ \section{Languages} 
+ 
+\begin{outerlist} 
+\item[] English - 
+\item[] 			\textbf{TOEFL Internet Based test.} 26-11-2016. \textbf{Score 114/120.}
+\item[] 			\textbf{First Certificate in English.} December 2005. \textbf{Grade: A.}
+
+\end{outerlist}
+
+\section{Work Experience}
+
+\begin{outerlist}
+
+\item[\href{https://www.cells.es}{\textbf{CELLS ALBA Synchrotron Facility}}.]
+Cerdanyola del Vall\`es (Barcelona). \\ Research Scientist. April 2010 - June 2010.
+
+\item[\href{https://www.cells.es}{\textbf{CELLS ALBA Synchrotron Facility}}.] Cerdanyola del Vall\`es (Barcelona). \\ Internship. January 2010 - February 2010.
+
+\item[\href{https://www.upc.edu/?set_language=en}{\textbf{Universitat Politècnica de Catalunya} (UPC).}] Barcelona.\\ Teaching Assistant. Departament de Teoria del Senyal i Comunicacions. September 2009 - December 2009.
+
+\item[\href{https://www.cells.es}{\textbf{CELLS ALBA Synchrotron Facility}}.] Cerdanyola del Vall\`es (Barcelona). \\ Internship. July 2009 - September 2009.
+
+\item[\href{https://www.upc.edu/?set_language=en}{\textbf{Universitat Politècnica de Catalunya} (UPC)}.] Barcelona. \\ Teaching Assistant. Departament d'Arquitectura de Computadors. 2008 - 2009.
+
+\item[\href{https://www.upc.edu/?set_language=en}{\textbf{Universitat Politècnica de Catalunya} (UPC)}.] Barcelona. \\ Teaching Assistant. Departament d'Arquitectura de Computadors. 2006 - 2007.
+
+\end{outerlist}
+
+\section{Services}
+
+\begin{outerlist}
+
+\item[] \href{https://www.robot-learning.org/}{CoRL}. Virtual Conference. Formerly in Cambridge. 16/11 - 18/11. 2020.
+\begin{itemize}
+\item[] Attendee.
+\end{itemize}
+
+\item[] \href{https://roscon.ros.org/world/2020/}{ROS World}. Virtual Conference. 12/11. 2020.
+\begin{itemize}
+\item[] Attendee.
+\end{itemize}
+
+\item[] \href{https://www.icml.cc/virtual/2020}{ICML 2020}. Virtual Conference. Formerly in Vienna. 12/07 - 18/07. 2020.
+\begin{itemize}
+\item[] Attendee.
+\end{itemize}
+
+\item[] \href{https://roboticsconference.org/}{Robotics: Science and Systems}. Virtual Conference. Formerly in Corvallis. 12/07 - 16/07. 2020.
+\begin{itemize}
+\item[] Attendee.
+\end{itemize}
+
+\item[] \href{https://www.siam.org/conferences/cm/conference/is20}{SIAM Conference on Imaging Science}. Virtual Conference. Formerly in Toronto. 06/07 - 17/07. 2020.
+\begin{itemize}
+\item[] Attendee.
+\end{itemize}
+
+\item[] \href{https://2020.ieee-isit.org/}{IEEE International Symposium on Information Theory}. Virtual Symposium. Formerly in Los Angeles. 21/06 - 26/06. 2020.
+\begin{itemize}
+\item[] Attendee.
+\end{itemize}
+
+\item[] \href{http://cvpr2020.thecvf.com/}{IEEE Conference on Computer Vision and Pattern Recognition}. Virtual Conference. Formerly in Seattle. 14/06 - 19/06. 2020.
+\begin{itemize}
+\item[] Attendee.
+\end{itemize}
+
+\item[] \href{https://icc2020.ieee-icc.org/}{IEEE International Conference on Communications}. Virtual Conference. Formerly in Dublin. 07/06 - 11/06. 2020.
+\begin{itemize}
+\item[] Attendee.
+\end{itemize}
+
+\item[] \href{https://www.icra2020.org/}{IEEE International Conference on Robotics and Automation}. Virtual Conference. Formerly in Paris. 31/05 - 04/06. 2020.
+\begin{itemize}
+\item[] Attendee.
+\end{itemize}
+
+\item[] \href{https://www.siam.org/conferences/cm/conference/mds20}{SIAM Conference on Mathematics of Data Science}. Virtual Conference. Formerly in Cincinnati. 04/05 - 30/06. 2020.
+\begin{itemize}
+\item[] Attendee.
+\end{itemize}
+
+\item[] \href{https://2020.ieeeicassp.org/}{IEEE International Conference on Acoustics, Speech, and Signal Processing}. Virtual Conference. Formerly in Barcelona. 04/05 - 08/05. 2020.
+\begin{itemize}
+\item[] Attendee.
+\end{itemize}
+
+\item[] \href{https://www.iclr.cc/virtual/index.html}{ICLR 2020}. Virtual Conference. Formerly in Addis Ababa. 26/04 - 01/05. 2020.
+\begin{itemize}
+\item[] Attendee.
+\item[] Oral presentation at the \href{https://www.neptune.ai/landings/iclr-virtual-social}{Social Virtual Event on Open source tools and practices in state-of-the-art DL research}.
+\item[] Slides with Q\&A annotations: \href{https://www.decurto.tw/c/iclr2020_DeCurto.pdf}{www.decurto.tw/c/iclr2020\_DeCurto.pdf}
+\end{itemize}
+
+\item[] \href{https://www.itsoc.org/people/chapters/spain-chapter/first-european-training-school-in-network-coding}{First European Training School in Network Coding}: Random Network Coding and Designs over $GF(q)$. IEEE Information Theory Society. Universitat Autònoma de Barcelona. Cerdanyola del Vall\`es (Barcelona). 04/02 - 08/02. 2013.
+\begin{itemize}
+\item[] From designs over $GF(q)$ to applications of networking: a cross-road for mathematics, computer science and engineering.
+\item[] Attendee and Volunteer. \\
+\end{itemize}
+
+\item[] \href{https://www.esof.eu/en/past-esof/barcelona-2008.html}{ESOF 2008}. Barcelona. 18/07 - 22/07. 2008.
+\begin{itemize}
+\item[] Scientific Volunteer.
+\end{itemize}
+\end{outerlist}
+
+\section{Extracurricular Activities}
+
+\begin{outerlist}
+
+\item[] Program of Open Mentoring. Department of Computer Science. The University of Hong Kong. 2014 - 2018. 
+
+\item[] MS Class Representative, cohort 2013. Department of Electrical Engineering. City University of Hong Kong. 2013 - 2014.
+
+\item[] Course in Investment and Financial Markets. Technical Analysis and Risk Management. Barcelona. 23 May 2011 - 26 May 2011.
+
+\item[] Course in Investment and Financial Markets. Barcelona. 18 April 2011 - 21 April 2011.
+
+\item[] Competition of Entrepreneurship. EMPRÈN UPC. 1st Edition. Universitat Politècnica de Catalunya (UPC). Finalist project awarded with honorable mention and 1000 euros. Barcelona. 14 March 2011 - 14 June 2011.
+
+\end{outerlist}
+
+\section{Programming}
+
+\begin{outerlist}
+
+\item[] C, C++, Java, MATLAB, Python, HTML, VHDL and Assembly.
+
+\end{outerlist}
+
+\section{Software}
+
+\begin{outerlist}
+
+\item[] \LaTeX, Maple, PSpice and ADS.
+
+\end{outerlist}
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% End CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
